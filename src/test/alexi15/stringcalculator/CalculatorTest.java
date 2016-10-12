@@ -2,6 +2,8 @@ package alexi15.stringcalcultor;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 
 public class CalculatorTest {
 	@Test
@@ -37,5 +39,14 @@ public class CalculatorTest {
 	@Test
 	public void testNewLineInFive() {
 		assertEquals(15, Calculator.add("1\n2,3\n4,5"));
+	}
+
+	@Rule
+ 	public final ExpectedException exception = ExpectedException.none();
+
+	@Test
+	public void testNegativeOne() {
+		exception.expect(IllegalArgumentException.class);
+		Calculator.add("-1");
 	}
 }
