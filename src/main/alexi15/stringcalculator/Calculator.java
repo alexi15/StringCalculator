@@ -13,9 +13,13 @@ public class Calculator{
 					throwException(numbers);
 
 			int sum = 0;
+			int currInt;
 			for(String curr : numbers)
 			{
-				sum += toInt(curr);
+				currInt = toInt(curr);
+				if(currInt > 1000)
+					currInt = 0;
+				sum += currInt;
 			}
 			return sum;
 		}

@@ -58,11 +58,21 @@ public class CalculatorTest {
 		Calculator.add("-1,-2");
 	}
 
-		@Test
+	@Test
 	public void testNegativeMultiple() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("Negatives not allowed: -1,-2,-5");
 		Calculator.add("-1,-2, 2\n-5");
 	}
 
+	@Test
+	public void testBiggerThen1000() {
+		assertEquals(2, Calculator.add("1001,2"));
+	}
+
+
+	@Test
+	public void testBiggerThen1000ButSumBiggerThen1000() {
+		assertEquals(1001, Calculator.add("1001,2,999"));
+	}
 }
