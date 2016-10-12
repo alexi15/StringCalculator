@@ -18,4 +18,14 @@ public class CalculatorTest {
 	public void testTwoStrings() {
 		assertEquals(2, Calculator.add("1,1"));
 	}
+
+	@Test
+	public void testThreeStrings() {
+		assertEquals(6, Calculator.add("1,2,3"));
+	}
+
+	@Test
+	public void testTenStrings() {
+		assertEquals(1+2+3+4+5+6+7+8+9+10, Calculator.add("1,2,3,4,5,6,7,8,9,10"));
+	}
 }

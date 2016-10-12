@@ -7,7 +7,10 @@ public class Calculator{
 		else if(text.contains(","))
 		{
 			String [] numbers = text.split(",");
-			return toInt(numbers[0]) + toInt(numbers[1]);
+			int sum = 0;
+			for(String curr : numbers)
+				sum += toInt(curr);
+			return sum;
 		}
 		else
 			return toInt(text);
