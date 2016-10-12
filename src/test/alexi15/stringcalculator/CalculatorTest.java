@@ -85,4 +85,9 @@ public class CalculatorTest {
 	public void testDelimiterFiveNumbers() {
 		assertEquals(15, Calculator.add("//;1;2,3\n4;5"));
 	}
+
+	@Test
+	public void testDelimiterDoublepointFiveNumbers() {
+		assertEquals(15, Calculator.add("//:1:2,3\n4:5"));
+	}
 }
