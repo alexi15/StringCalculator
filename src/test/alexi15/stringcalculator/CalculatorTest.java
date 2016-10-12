@@ -28,4 +28,9 @@ public class CalculatorTest {
 	public void testTenStrings() {
 		assertEquals(1+2+3+4+5+6+7+8+9+10, Calculator.add("1,2,3,4,5,6,7,8,9,10"));
 	}
+
+	@Test
+	public void testNewLineInString() {
+		assertEquals(6, Calculator.add("1\n2,3"));
+	}
 }
