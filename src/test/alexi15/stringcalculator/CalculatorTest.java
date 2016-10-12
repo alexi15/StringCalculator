@@ -50,4 +50,12 @@ public class CalculatorTest {
 		thrown.expectMessage("Negatives not allowed: -1");
 		Calculator.add("-1");
 	}
+
+	@Test
+	public void testNegativeTwo() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negatives not allowed: -1,-2");
+		Calculator.add("-1,-2");
+	}
+
 }

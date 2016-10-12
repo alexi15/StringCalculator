@@ -5,12 +5,13 @@ public class Calculator{
 		if(text.equals(""))
 			return 0;
 
-		if(text.contains("-"))
-			throw new IllegalArgumentException("Negatives not allowed: -1");
-
 		else if(text.contains(",") || text.contains("\n"))
 		{
 			String [] numbers = text.split(",|\n");
+
+			if(text.contains("-"))
+					throwException(numbers);
+
 			int sum = 0;
 			for(String curr : numbers)
 			{
@@ -18,12 +19,25 @@ public class Calculator{
 			}
 			return sum;
 		}
-		
+
 		else
+		{
+			if(text.contains("-"))
+				throw new IllegalArgumentException("Negatives not allowed: " + text);
 			return toInt(text);
+		}
 	}
 
 	private static int toInt(String text){
 		return Integer.parseInt(text);
+	}
+
+	private static void throwException(String[] numbers)
+	{
+		String error = "Negatives not allowed: ";
+		for(String curr : numbers)
+			if(curr.contains("-"))
+				error = error + curr + ",";
+		throw new IllegalArgumentException(error);
 	}
 }
