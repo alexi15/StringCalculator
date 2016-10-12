@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./bin/buildMain
+./bin/buildTest

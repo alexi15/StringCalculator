@@ -1,0 +1,4 @@
+#!/bin/bash
+
+javac -classpath "classes/;lib/junit-4.12.jar" src/test/alexi15/stringcalculator/*.java -d classes
+
