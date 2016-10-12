@@ -80,4 +80,9 @@ public class CalculatorTest {
 	public void testDelimiterTwoNumbers() {
 		assertEquals(3, Calculator.add("//;1;2"));
 	}
+
+	@Test
+	public void testDelimiterFiveNumbers() {
+		assertEquals(15, Calculator.add("//;1;2,3\n4;5"));
+	}
 }
