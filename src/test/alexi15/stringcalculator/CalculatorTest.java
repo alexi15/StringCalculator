@@ -58,4 +58,11 @@ public class CalculatorTest {
 		Calculator.add("-1,-2");
 	}
 
+		@Test
+	public void testNegativeMultiple() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negatives not allowed: -1,-2,-5");
+		Calculator.add("-1,-2, 2\n-5");
+	}
+
 }
