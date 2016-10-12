@@ -42,11 +42,12 @@ public class CalculatorTest {
 	}
 
 	@Rule
- 	public final ExpectedException exception = ExpectedException.none();
+ 	public final ExpectedException thrown = ExpectedException.none();
 
 	@Test
 	public void testNegativeOne() {
-		exception.expect(IllegalArgumentException.class);
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("Negatives not allowed: -1");
 		Calculator.add("-1");
 	}
 }

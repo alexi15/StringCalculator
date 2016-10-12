@@ -4,8 +4,10 @@ public class Calculator{
 	public static int add(String text){
 		if(text.equals(""))
 			return 0;
+
 		if(text.contains("-"))
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Negatives not allowed: -1");
+
 		else if(text.contains(",") || text.contains("\n"))
 		{
 			String [] numbers = text.split(",|\n");
@@ -16,6 +18,7 @@ public class Calculator{
 			}
 			return sum;
 		}
+		
 		else
 			return toInt(text);
 	}
