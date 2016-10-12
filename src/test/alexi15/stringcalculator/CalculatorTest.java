@@ -75,4 +75,9 @@ public class CalculatorTest {
 	public void testBiggerThen1000ButSumBiggerThen1000() {
 		assertEquals(1001, Calculator.add("1001,2,999"));
 	}
+
+	@Test
+	public void testDelimiterTwoNumbers() {
+		assertEquals(3, Calculator.add("//;1;2"));
+	}
 }
