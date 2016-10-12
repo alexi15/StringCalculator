@@ -30,7 +30,12 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testNewLineInString() {
+	public void testNewLineThree() {
 		assertEquals(6, Calculator.add("1\n2,3"));
+	}
+
+	@Test
+	public void testNewLineInFive() {
+		assertEquals(15, Calculator.add("1\n2,3\n4,5"));
 	}
 }
